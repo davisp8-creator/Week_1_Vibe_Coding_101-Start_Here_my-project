@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Greeting</title>
+<style>
+  body {
+    font-family: system-ui, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background: #f5f5f5;
+  }
+  .card {
+    background: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 300px;
+  }
+  input {
+    padding: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background: #2563eb;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+  }
+  button:hover {
+    background: #1d4ed8;
+  }
+  #greeting {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: #111;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <form id="greet-form">
+      <input type="text" id="name-input" placeholder="Enter your name" required>
+      <button type="submit">Greet me</button>
+    </form>
+    <div id="greeting"></div>
+  </div>
+
+  <script>
+    document.getElementById('greet-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = document.getElementById('name-input').value.trim();
+      document.getElementById('greeting').textContent = name ? 'Hello, ' + name + '!' : '';
+    });
+  </script>
+</body>
+</html>
